@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="pengchengbeiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="dt_Article">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClassId" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" />
+          <Property Name="Author" Type="nvarchar" MaxLength="50" />
+          <Property Name="Form" Type="nvarchar" MaxLength="50" />
+          <Property Name="Keyword" Type="nvarchar" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar" MaxLength="250" />
+          <Property Name="Daodu" Type="nvarchar" MaxLength="250" />
+          <Property Name="ImgUrl" Type="nvarchar" MaxLength="250" />
+          <Property Name="Content" Type="ntext" />
+          <Property Name="Click" Type="int" Nullable="false" />
+          <Property Name="IsMsg" Type="int" Nullable="false" />
+          <Property Name="IsTop" Type="int" Nullable="false" />
+          <Property Name="IsRed" Type="int" Nullable="false" />
+          <Property Name="IsHot" Type="int" Nullable="false" />
+          <Property Name="IsSlide" Type="int" Nullable="false" />
+          <Property Name="IsLock" Type="int" Nullable="false" />
+          <Property Name="AddTime" Type="datetime" Nullable="false" />
+          <Property Name="ver" Type="char" MaxLength="10" />
+          <Property Name="filepath" Type="nvarchar" MaxLength="250" />
+          <Property Name="SortId" Type="int" />
+          <Property Name="Download" Type="nvarchar" MaxLength="1000" />
+          <Property Name="SubTitle" Type="nvarchar" MaxLength="250" />
+          <Property Name="BigImgUrl" Type="nvarchar" MaxLength="250" />
+          <Property Name="IndexImgUrl" Type="nvarchar" MaxLength="250" />
+          <Property Name="Editor" Type="nvarchar" MaxLength="2000" />
+          <Property Name="Herf" Type="varchar" MaxLength="250" />
+          <Property Name="HerfFlag" Type="int" />
+          <Property Name="htmlpath" Type="varchar" MaxLength="300" />
+          <Property Name="ImgUrl5" Type="nvarchar" MaxLength="500" />
+          <Property Name="Spell" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="dt_Bannner">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClassId" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Imgurl" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ImgurlSmallTitle" Type="nvarchar" MaxLength="100" />
+          <Property Name="ImgurlSmall" Type="nvarchar" MaxLength="100" />
+          <Property Name="Ismsg" Type="int" Nullable="false" />
+          <Property Name="IsTop" Type="int" Nullable="false" />
+          <Property Name="IsRed" Type="int" Nullable="false" />
+          <Property Name="IsSlide" Type="int" Nullable="false" />
+          <Property Name="IsLock" Type="int" Nullable="false" />
+          <Property Name="SortId" Type="int" Nullable="false" />
+          <Property Name="AddTime" Type="datetime" Nullable="false" />
+          <Property Name="Ver" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Description" Type="text" />
+          <Property Name="Herf" Type="nvarchar" MaxLength="100" />
+          <Property Name="HerfFlag" Type="int" />
+          <Property Name="HtmlPaht" Type="varchar" MaxLength="100" />
+          <Property Name="content1" Type="ntext" />
+          <Property Name="content2" Type="ntext" />
+        </EntityType>
+        <EntityType Name="dt_Channel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="ParentId" Type="int" Nullable="false" />
+          <Property Name="ClassList" Type="nvarchar" MaxLength="500" />
+          <Property Name="ClassLayer" Type="int" Nullable="false" />
+          <Property Name="SortId" Type="int" Nullable="false" />
+          <Property Name="PageUrl" Type="nvarchar" MaxLength="250" />
+          <Property Name="KindId" Type="int" Nullable="false" />
+          <Property Name="Content" Type="ntext" />
+          <Property Name="ImgUrl" Type="nvarchar" MaxLength="500" />
+          <Property Name="ver" Type="char" MaxLength="10" />
+          <Property Name="Filepath" Type="nvarchar" MaxLength="250" />
+          <Property Name="Keyword" Type="varchar" MaxLength="500" />
+          <Property Name="Description" Type="varchar" MaxLength="1000" />
+          <Property Name="ImgUrl2" Type="nvarchar" MaxLength="500" />
+          <Property Name="HtmlPath" Type="varchar" MaxLength="250" />
+          <Property Name="HtmlSize" Type="varchar" MaxLength="250" />
+          <Property Name="WebPath" Type="varchar" MaxLength="250" />
+          <Property Name="WebIndex" Type="varchar" MaxLength="200" />
+          <Property Name="LeftDisplay" Type="int" />
+          <Property Name="FrontDeskDisplay" Type="int" />
+          <Property Name="FileUrl" Type="nvarchar" MaxLength="250" />
+          <Property Name="IsNew" Type="int" />
+          <Property Name="IsSingle" Type="int" />
+          <Property Name="IsProduct" Type="int" />
+          <Property Name="IsRecruitment" Type="int" />
+          <Property Name="IsDownload" Type="int" />
+          <Property Name="IsLink" Type="int" />
+          <Property Name="IsLeaveMessage" Type="int" />
+          <Property Name="IsBanner" Type="int" />
+          <Property Name="PageType" Type="nvarchar" MaxLength="250" />
+          <Property Name="width" Type="int" />
+          <Property Name="height" Type="int" />
+          <Property Name="chen1" Type="int" />
+          <Property Name="chen2" Type="int" />
+        </EntityType>
+        <EntityContainer Name="pengchengbeiModelStoreContainer">
+          <EntitySet Name="dt_Article" EntityType="Self.dt_Article" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dt_Bannner" EntityType="Self.dt_Bannner" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dt_Channel" EntityType="Self.dt_Channel" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="pengchengbeiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="dt_Article">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClassId" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Form" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Keyword" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Daodu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ImgUrl" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Click" Type="Int32" Nullable="false" />
+          <Property Name="IsMsg" Type="Int32" Nullable="false" />
+          <Property Name="IsTop" Type="Int32" Nullable="false" />
+          <Property Name="IsRed" Type="Int32" Nullable="false" />
+          <Property Name="IsHot" Type="Int32" Nullable="false" />
+          <Property Name="IsSlide" Type="Int32" Nullable="false" />
+          <Property Name="IsLock" Type="Int32" Nullable="false" />
+          <Property Name="AddTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ver" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="filepath" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="SortId" Type="Int32" />
+          <Property Name="Download" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="SubTitle" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="BigImgUrl" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="IndexImgUrl" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Editor" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="Herf" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="HerfFlag" Type="Int32" />
+          <Property Name="htmlpath" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="ImgUrl5" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Spell" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="dt_Bannner">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClassId" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Imgurl" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ImgurlSmallTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ImgurlSmall" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Ismsg" Type="Int32" Nullable="false" />
+          <Property Name="IsTop" Type="Int32" Nullable="false" />
+          <Property Name="IsRed" Type="Int32" Nullable="false" />
+          <Property Name="IsSlide" Type="Int32" Nullable="false" />
+          <Property Name="IsLock" Type="Int32" Nullable="false" />
+          <Property Name="SortId" Type="Int32" Nullable="false" />
+          <Property Name="AddTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Ver" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Herf" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="HerfFlag" Type="Int32" />
+          <Property Name="HtmlPaht" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="content1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="content2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="dt_Channel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ParentId" Type="Int32" Nullable="false" />
+          <Property Name="ClassList" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ClassLayer" Type="Int32" Nullable="false" />
+          <Property Name="SortId" Type="Int32" Nullable="false" />
+          <Property Name="PageUrl" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="KindId" Type="Int32" Nullable="false" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ImgUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ver" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="Filepath" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Keyword" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="ImgUrl2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="HtmlPath" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="HtmlSize" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="WebPath" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="WebIndex" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="LeftDisplay" Type="Int32" />
+          <Property Name="FrontDeskDisplay" Type="Int32" />
+          <Property Name="FileUrl" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="IsNew" Type="Int32" />
+          <Property Name="IsSingle" Type="Int32" />
+          <Property Name="IsProduct" Type="Int32" />
+          <Property Name="IsRecruitment" Type="Int32" />
+          <Property Name="IsDownload" Type="Int32" />
+          <Property Name="IsLink" Type="Int32" />
+          <Property Name="IsLeaveMessage" Type="Int32" />
+          <Property Name="IsBanner" Type="Int32" />
+          <Property Name="PageType" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="width" Type="Int32" />
+          <Property Name="height" Type="Int32" />
+          <Property Name="chen1" Type="Int32" />
+          <Property Name="chen2" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="pengchengbeiEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="dt_Article" EntityType="Self.dt_Article" />
+          <EntitySet Name="dt_Bannner" EntityType="Self.dt_Bannner" />
+          <EntitySet Name="dt_Channel" EntityType="Self.dt_Channel" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="pengchengbeiModelStoreContainer" CdmEntityContainer="pengchengbeiEntities">
+          <EntitySetMapping Name="dt_Article">
+            <EntityTypeMapping TypeName="pengchengbeiModel.dt_Article">
+              <MappingFragment StoreEntitySet="dt_Article">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="Form" ColumnName="Form" />
+                <ScalarProperty Name="Keyword" ColumnName="Keyword" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Daodu" ColumnName="Daodu" />
+                <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Click" ColumnName="Click" />
+                <ScalarProperty Name="IsMsg" ColumnName="IsMsg" />
+                <ScalarProperty Name="IsTop" ColumnName="IsTop" />
+                <ScalarProperty Name="IsRed" ColumnName="IsRed" />
+                <ScalarProperty Name="IsHot" ColumnName="IsHot" />
+                <ScalarProperty Name="IsSlide" ColumnName="IsSlide" />
+                <ScalarProperty Name="IsLock" ColumnName="IsLock" />
+                <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+                <ScalarProperty Name="ver" ColumnName="ver" />
+                <ScalarProperty Name="filepath" ColumnName="filepath" />
+                <ScalarProperty Name="SortId" ColumnName="SortId" />
+                <ScalarProperty Name="Download" ColumnName="Download" />
+                <ScalarProperty Name="SubTitle" ColumnName="SubTitle" />
+                <ScalarProperty Name="BigImgUrl" ColumnName="BigImgUrl" />
+                <ScalarProperty Name="IndexImgUrl" ColumnName="IndexImgUrl" />
+                <ScalarProperty Name="Editor" ColumnName="Editor" />
+                <ScalarProperty Name="Herf" ColumnName="Herf" />
+                <ScalarProperty Name="HerfFlag" ColumnName="HerfFlag" />
+                <ScalarProperty Name="htmlpath" ColumnName="htmlpath" />
+                <ScalarProperty Name="ImgUrl5" ColumnName="ImgUrl5" />
+                <ScalarProperty Name="Spell" ColumnName="Spell" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dt_Bannner">
+            <EntityTypeMapping TypeName="pengchengbeiModel.dt_Bannner">
+              <MappingFragment StoreEntitySet="dt_Bannner">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Imgurl" ColumnName="Imgurl" />
+                <ScalarProperty Name="ImgurlSmallTitle" ColumnName="ImgurlSmallTitle" />
+                <ScalarProperty Name="ImgurlSmall" ColumnName="ImgurlSmall" />
+                <ScalarProperty Name="Ismsg" ColumnName="Ismsg" />
+                <ScalarProperty Name="IsTop" ColumnName="IsTop" />
+                <ScalarProperty Name="IsRed" ColumnName="IsRed" />
+                <ScalarProperty Name="IsSlide" ColumnName="IsSlide" />
+                <ScalarProperty Name="IsLock" ColumnName="IsLock" />
+                <ScalarProperty Name="SortId" ColumnName="SortId" />
+                <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+                <ScalarProperty Name="Ver" ColumnName="Ver" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Herf" ColumnName="Herf" />
+                <ScalarProperty Name="HerfFlag" ColumnName="HerfFlag" />
+                <ScalarProperty Name="HtmlPaht" ColumnName="HtmlPaht" />
+                <ScalarProperty Name="content1" ColumnName="content1" />
+                <ScalarProperty Name="content2" ColumnName="content2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dt_Channel">
+            <EntityTypeMapping TypeName="pengchengbeiModel.dt_Channel">
+              <MappingFragment StoreEntitySet="dt_Channel">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="ClassList" ColumnName="ClassList" />
+                <ScalarProperty Name="ClassLayer" ColumnName="ClassLayer" />
+                <ScalarProperty Name="SortId" ColumnName="SortId" />
+                <ScalarProperty Name="PageUrl" ColumnName="PageUrl" />
+                <ScalarProperty Name="KindId" ColumnName="KindId" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
+                <ScalarProperty Name="ver" ColumnName="ver" />
+                <ScalarProperty Name="Filepath" ColumnName="Filepath" />
+                <ScalarProperty Name="Keyword" ColumnName="Keyword" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ImgUrl2" ColumnName="ImgUrl2" />
+                <ScalarProperty Name="HtmlPath" ColumnName="HtmlPath" />
+                <ScalarProperty Name="HtmlSize" ColumnName="HtmlSize" />
+                <ScalarProperty Name="WebPath" ColumnName="WebPath" />
+                <ScalarProperty Name="WebIndex" ColumnName="WebIndex" />
+                <ScalarProperty Name="LeftDisplay" ColumnName="LeftDisplay" />
+                <ScalarProperty Name="FrontDeskDisplay" ColumnName="FrontDeskDisplay" />
+                <ScalarProperty Name="FileUrl" ColumnName="FileUrl" />
+                <ScalarProperty Name="IsNew" ColumnName="IsNew" />
+                <ScalarProperty Name="IsSingle" ColumnName="IsSingle" />
+                <ScalarProperty Name="IsProduct" ColumnName="IsProduct" />
+                <ScalarProperty Name="IsRecruitment" ColumnName="IsRecruitment" />
+                <ScalarProperty Name="IsDownload" ColumnName="IsDownload" />
+                <ScalarProperty Name="IsLink" ColumnName="IsLink" />
+                <ScalarProperty Name="IsLeaveMessage" ColumnName="IsLeaveMessage" />
+                <ScalarProperty Name="IsBanner" ColumnName="IsBanner" />
+                <ScalarProperty Name="PageType" ColumnName="PageType" />
+                <ScalarProperty Name="width" ColumnName="width" />
+                <ScalarProperty Name="height" ColumnName="height" />
+                <ScalarProperty Name="chen1" ColumnName="chen1" />
+                <ScalarProperty Name="chen2" ColumnName="chen2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="Nhibernate.Domain" assembly="Nhibernate.Domain">
+  <class name="dt_Bannner" table="dt_Bannner">
+    <id name="Id" column="Id">
+      <generator class="native"/>
+    </id>
+    <property name="Title" column="Title"  />
+    <property name="ClassId" column="ClassId"  />
+    <!--<many-to-one name="dt_Channel" column="dt_Channel" class="NHibernateBasics.dt_Channel, NHibernateBasics" foreign-key="FK_CustomerOrders" />-->
+  </class>
+</hibernate-mapping>

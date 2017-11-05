@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E10CFC6C-D948-454E-BAD0-4CBCBE617220}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EFDemo</RootNamespace>
+    <AssemblyName>EFDemo</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="chen_add.cs">
+      <DependentUpon>Pcb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="chen_moban.cs">
+      <DependentUpon>Pcb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDAL.cs" />
+    <Compile Include="CRUD.cs" />
+    <Compile Include="dt_Administrator.cs">
+      <DependentUpon>Pcb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dt_Article.cs">
+      <DependentUpon>Pcb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dt_Bannner.cs">
+      <DependentUpon>Pcb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dt_Channel.cs">
+      <DependentUpon>Pcb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dt_Contents.cs">
+      <DependentUpon>Pcb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dt_Downloads.cs">
+      <DependentUpon>Pcb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dt_Feedback.cs">
+      <DependentUpon>Pcb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dt_FriendshipLink.cs">
+      <DependentUpon>Pcb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dt_Job.cs">
+      <DependentUpon>Pcb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dt_Links.cs">
+      <DependentUpon>Pcb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dt_Member.cs">
+      <DependentUpon>Pcb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dt_Module.cs">
+      <DependentUpon>Pcb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dt_PageType.cs">
+      <DependentUpon>Pcb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dt_Pictures.cs">
+      <DependentUpon>Pcb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dt_PicturesLink.cs">
+      <DependentUpon>Pcb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dt_Product.cs">
+      <DependentUpon>Pcb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dt_ProductFeedback.cs">
+      <DependentUpon>Pcb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dt_ProductField.cs">
+      <DependentUpon>Pcb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dt_productkey.cs">
+      <DependentUpon>Pcb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dt_quest.cs">
+      <DependentUpon>Pcb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dt_SinglePage.cs">
+      <DependentUpon>Pcb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dt_SystemLog.cs">
+      <DependentUpon>Pcb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dt_TemplateModel.cs">
+      <DependentUpon>Pcb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dt_video.cs">
+      <DependentUpon>Pcb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dt_webset.cs">
+      <DependentUpon>Pcb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pcb.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Pcb.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pcb.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Pcb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pcb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Pcb.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="入门.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="Pcb.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Pcb.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="packages.config" />
+    <None Include="Pcb.edmx.diagram">
+      <DependentUpon>Pcb.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CRUD.png" />
+    <Content Include="EDM设计器.png" />
+    <Content Include="EF架构.png" />
+    <Content Include="ORM.png" />
+    <Content Include="Pcb.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Pcb.edmx</DependentUpon>
+      <LastGenOutput>Pcb.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Pcb.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Pcb.edmx</DependentUpon>
+      <LastGenOutput>Pcb.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

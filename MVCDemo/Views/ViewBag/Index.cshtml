@@ -1,0 +1,23 @@
+﻿@model List<string>
+@*  强类型View
+    在试图上添加了 @model指令时
+    当前视图就会继承于 WebViewPage<t>
+    强类型视图页面类，并且指定T为Student：
+
+    当前视图就会继承于 WebViewPage<T> 强类型视图页面类，但T变成了 dynamic
+
+*@
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@ViewBag.Name
+
+
+@foreach (var item in Model)
+{
+    <span>@item</span> <br />
+
+}

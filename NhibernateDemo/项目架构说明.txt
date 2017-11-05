@@ -1,0 +1,9 @@
+﻿采用传统三层架构
+
+Shop.Domain：数据实体和数据库映射文件。也有人叫做领域层。
+
+Shop.Data：数据层，存放数据库的操作及Nhibernate辅助类。引用Iesi.Collections.dll，NHibernate.dll和类库Shop.Domain
+
+Shop.Business:业务逻辑类。引用类库项目Shop.Domain， Shop.Data
+
+Shop.WebSite:测试项目。需引用Iesi.Collections.dll，NHibernate.dll和类库项目Shop.Domain， Shop.Business

@@ -1,0 +1,16 @@
+﻿@model MVCDemo.Models.UserModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+@using (Html.BeginForm("Post4", "PostData"))
+{
+    @Html.TextBox("name");
+    @Html.TextBox("age");
+
+    <input type="submit" value="提交" />
+
+}

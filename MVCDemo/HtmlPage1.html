@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+    <style type="text/css">
+        .want {
+            border: 2px solid red;
+        }
+
+        .nowant {
+            border: 1px solid black;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="fileUpload" class="nowant" style="width: 200px; height: 200px;"></div>
+    <div id="test"></div>
+    <script type="text/javascript">
+
+        var isUpload = false;
+        window.onload = function () {
+
+            var targer = document.getElementById("fileUpload");
+            //当拖曳元素进入目标元素的时候触发的事件，此事件作用在目标元素上
+            targer.ondragenter = function (e) {
+                if (isUpload) return;//如果正在上传中 则不允许再放置上传
+                var types = e.dataTransfer.types;//该属性返回一个DOMStringList对象，该对象包括了存入dataTransfer中数据的所有类型。
+                if (types && types.some(function (v) { return v === "Files" })) {
+                    return false;//阻止浏览器默认操作
+                }
+            }
+            //拖拽元素在目标元素上移动的时候触发的事件，此事件作用在目标元素上
+            targer.ondragover = function (e) {
+                document.getElementById("fileUpload").classList.remove("nowant");
+                document.getElementById("fileUpload").classList.add("want");
+                return false;//阻止浏览器默认操作
+            }
+            // 在可拖动的元素移出放置目标时执行 JavaScript :
+            targer.ondragleave = function (e) {
+                document.getElementById("fileUpload").classList.remove("want");
+                document.getElementById("fileUpload").classList.add("nowant");
+                return false;
+            }
+            //在可拖动元素放置在 <div> 元素中时执行 JavaScript:
+            targer.ondrop = function (e) {
+                if (isUpload) return false;//在上传的途中不允许再上传
+                console.log(e.dataTransfer);//这样输出是拿不到信息的
+                var files = e.dataTransfer.files;//获得 放置的文件信息
+                //这个例子只允许单文件上传哟
+                if (files && files.length > 0 && files.length == 1) {
+                    //创建xhr 使用xhr2  进行文件上传
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("POST", "");//设置上传方式以及处理请求地址
+                    var body = new FormData();//请求报文体数据存储点
+
+                    body.append("file", files[0]);
+                    //上传进度回调
+                    xhr.upload.onprogress = function (e) {
+
+                        if (e.lengthComputable) {
+                            document.getElementById("test").innerHTML = (e.loaded / e.total * 100) + "%";
+                        }
+
+                    }
+                    xhr.onload = function (e) {
+                        isUpload = false;//上传完成可继续拖拽上传
+                    }
+                    xhr.send(body);
+                    document.getElementById("fileUpload").classList.remove("want");
+                    document.getElementById("fileUpload").classList.add("nowant");
+                }
+
+                return false;//组织浏览器默认操作
+            }
+        }
+    </script>
+</body>
+</html>

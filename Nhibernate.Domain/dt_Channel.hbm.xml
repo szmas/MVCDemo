@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="Nhibernate.Domain" assembly="Nhibernate.Domain">
+  <class name="dt_Channel" table="dt_Channel" lazy="false">
+    <id name="Id" column="Id">
+      <generator class="identity"/>
+    </id>
+    <property name="Title" column="Title"  />
+  </class>
+</hibernate-mapping>
